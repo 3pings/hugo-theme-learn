@@ -6,6 +6,8 @@
     {{ hugo.Generator }}
     {{ partial "meta.html" . }}
     {{ partial "favicon.html" . }}
+
+
     <title>{{ .Title }} {{ default "::" .Site.Params.titleSeparator }} {{ .Site.Title }}</title>
 
     {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
@@ -39,6 +41,7 @@
       {{ end }}
     </style>
     {{ partial "custom-header.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
     {{ partial "menu.html" . }}
